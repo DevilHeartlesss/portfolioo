@@ -24,7 +24,7 @@
 
 <!-- Navbar -->
 <nav class="fixed w-full flex justify-between items-center px-6 py-4 bg-black/60 backdrop-blur z-50">
-  <h1 class="text-xl font-bold">Aayush ⚡</h1>
+  <h1 class="text-xl font-bold">Aayush</h1>
   <div class="hidden md:flex gap-6 items-center">
     <a href="#profiles">Profiles</a>
     <a href="#stats">Stats</a>
@@ -36,7 +36,7 @@
 <!-- Hero -->
 <section class="h-screen flex flex-col justify-center items-center text-center px-4">
   <h1 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm Aayush 👋</h1>
-  <span id="typing" class="text-xl text-cyan-400"></span>
+  <span id="typing" class="text-xl "></span>
 
   <!-- Open to Work Badge -->
   <div class="mt-4 px-4 py-2 border border-green-400 text-green-400 rounded-full text-sm animate-pulse">
@@ -90,7 +90,7 @@
 
 <!-- Stats -->
 <section id="stats" class="py-20 px-6 md:px-20">
-  <h2 class="text-3xl mb-10">📊 Stats</h2>
+  <h2 class="text-3xl mb-10"> Stats</h2>
   <div class="grid md:grid-cols-3 gap-6">
     <div class="glass p-6 rounded-xl glow">
       <h3>LeetCode</h3>
@@ -122,9 +122,9 @@
 <footer class="text-center py-6 text-gray-400">Built by Aayush</footer>
 
 <script>
-  new Typed('#typing',{strings:['I solve problems at scale.','800+ DSA problems.','Future FAANG Engineer.'],typeSpeed:50,backSpeed:25,loop:true});
+  new Typed('#typing',{strings:['I solve problems at scale.','800+ DSA problems.','Future FAANG Engineer.'],typeSpeed:50,backSpeed:25,loop:true,showCursor: false});
 
-  particlesJS('particles-js',{particles:{number:{value:60},color:{value:'#00ffff'},line_linked:{enable:true,color:'#00ffff'}}});
+  particlesJS('particles-js',{particles:{number:{value:60},color:{value:'#329898'},line_linked:{enable:true,color:'#00ffff'}}});
 
   fetch('https://leetcode-stats-api.herokuapp.com/AlgoWhizAayush')
     .then(res=>res.json())
