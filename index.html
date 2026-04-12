@@ -129,9 +129,12 @@
   fetch('https://leetcode-stats-api.herokuapp.com/AlgoWhizAayush')
     .then(res=>res.json())
     .then(d=>{
-      document.getElementById('lc').innerText = d.totalSolved + ' solved';
-      document.getElementById('lc-rating').innerText = `Rating: ${d.ranking || 'N/A'} | Easy: ${d.easySolved}, Medium: ${d.mediumSolved}, Hard: ${d.hardSolved}`;
-    });
+      console.log(d);
+      document.getElementById('lc-rating').innerText =
+  `Rating: ${d.ranking || 'N/A'} | Easy: ${d.easySolved}, Medium: ${d.mediumSolved}, Hard: ${d.hardSolved}`;
+      document.getElementById('lc').innerText=d.totalSolved;
+    })
+    .catch(()=>{document.getElementById('lc').innerText='Backend needed';document.getElementById('lc-rating').innerText='Backend needed';});
 
   fetch('/api/gfg')
     .then(res=>res.json())
