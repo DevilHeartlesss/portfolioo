@@ -58,6 +58,19 @@
       <i class="fa-brands fa-x-twitter"></i>
     </a>
   </div>
+
+  <!-- ✅ Resume Buttons -->
+  <div class="mt-6 flex gap-4">
+    <a href="./resume.pdf" download
+       class="bg-[#00F5D4] text-black px-6 py-2 rounded-lg font-semibold hover:scale-105 transition">
+      📄 Download Resume
+    </a>
+
+    <a href="./resume.pdf" target="_blank"
+       class="border border-[#00F5D4] text-[#00F5D4] px-6 py-2 rounded-lg hover:bg-[#00F5D4] hover:text-black transition">
+      👀 View Resume
+    </a>
+  </div>
 </section>
 
 <!-- Profiles Section -->
@@ -122,19 +135,29 @@
 <footer class="text-center py-6 text-gray-400">Built by Aayush</footer>
 
 <script>
-  new Typed('#typing',{strings:['I solve problems at scale.','800+ DSA problems.','Future FAANG Engineer.'],typeSpeed:50,backSpeed:25,loop:true,showCursor: false});
+  new Typed('#typing',{
+    strings:['I solve problems at scale.','800+ DSA problems.','Future FAANG Engineer.'],
+    typeSpeed:50,
+    backSpeed:25,
+    loop:true,
+    showCursor: false
+  });
 
-  particlesJS('particles-js',{particles:{number:{value:60},color:{value:'#329898'},line_linked:{enable:true,color:'#00ffff'}}});
+  particlesJS('particles-js',{
+    particles:{number:{value:60},color:{value:'#329898'},line_linked:{enable:true,color:'#00ffff'}}
+  });
 
   fetch('https://leetcode-stats-api.herokuapp.com/AlgoWhizAayush')
     .then(res=>res.json())
     .then(d=>{
-      console.log(d);
       document.getElementById('lc-rating').innerText =
-  `Rating: ${d.ranking || 'N/A'} | Easy: ${d.easySolved}, Medium: ${d.mediumSolved}, Hard: ${d.hardSolved}`;
+      `Rating: ${d.ranking || 'N/A'} | Easy: ${d.easySolved}, Medium: ${d.mediumSolved}, Hard: ${d.hardSolved}`;
       document.getElementById('lc').innerText=d.totalSolved;
     })
-    .catch(()=>{document.getElementById('lc').innerText='Backend needed';document.getElementById('lc-rating').innerText='Backend needed';});
+    .catch(()=>{
+      document.getElementById('lc').innerText='Backend needed';
+      document.getElementById('lc-rating').innerText='Backend needed';
+    });
 
   fetch('/api/gfg')
     .then(res=>res.json())
@@ -146,10 +169,9 @@
   document.getElementById('contact-form').addEventListener('submit',function(e){
     e.preventDefault();
     emailjs.sendForm('YOUR_SERVICE_ID','YOUR_TEMPLATE_ID',this)
-      .then(()=>alert('Message Sent '));
+      .then(()=>alert('Message Sent'));
   });
 </script>
 
 </body>
 </html>
-
